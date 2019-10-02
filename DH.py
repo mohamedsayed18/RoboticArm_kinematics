@@ -15,7 +15,8 @@ DH_table = [
 ]
 
 #calculate the matrix from each joint to the next
-def homogenous (dh_row):
+#TODO Make this function takes two frames and calculate the homogenous
+def homogenous (DH_table, dh_row):
     H = [
     [sp.cos(DH_table[dh_row][0]), -sp.sin(DH_table[dh_row][0])*sp.cos(DH_table[dh_row][2]), sp.sin(DH_table[dh_row][0])*sp.sin(DH_table[dh_row][2]), DH_table[dh_row][3]*sp.cos(DH_table[dh_row][0]) ],
     [sp.sin(DH_table[dh_row][0]), sp.cos(DH_table[dh_row][0])*sp.cos(DH_table[dh_row][2]), -sp.cos(DH_table[dh_row][0])*sp.sin(DH_table[dh_row][2]), DH_table[dh_row][3]*sp.sin(DH_table[dh_row][0])],
