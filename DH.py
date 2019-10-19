@@ -27,7 +27,7 @@ def homogenous (DH_table, dh_row):
 
 #calculate the matrix from the end effector to the base joint
 def Robot_matrix() :
-    R_M = np.ones((4,4))
+    R_M = np.identity(3)
     for i in range(6):
         H = homogenous(i)
         R_M = R_M.dot(H)
